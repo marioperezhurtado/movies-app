@@ -1,0 +1,29 @@
+.nav-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+    svg {
+      width: 20px;
+      fill: #737477;
+    }
+
+    &:hover {
+      background: -webkit-linear-gradient(rgb(33, 147, 176), rgb(109, 213, 237));
+      color: #fff;
+
+      svg {
+        fill: #fff;
+      }
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import styles from './Home.module.scss'
 
 import SearchBar from '../../components/SearchBar/SearchBar'
+import NavOverview from '../../layout/NavOverview/NavOverview'
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
         <h2 className="text-highlighted">fast and easy</h2>
       </div>
       <SearchBar></SearchBar>
+      <NavOverview></NavOverview>
     </div>
   )
 }
