@@ -1,0 +1,16 @@
+.app {
+  display: flex;
+
+}
+
+.content {
+  margin: 4rem 10%;
+}
+
+.text-highlighted {
+  width: fit-content;
+  background: -webkit-linear-gradient(rgb(33, 147, 176), rgb(109, 213, 237));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

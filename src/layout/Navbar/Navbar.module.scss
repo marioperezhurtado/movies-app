@@ -1,0 +1,41 @@
+.navbar {
+  height: 100vh;
+  min-width: fit-content;
+  background-color: #292e34;
+  text-align: center;
+
+  h1 {
+    margin: 2rem 0 5rem;
+    color: #fff;
+    font-size: 1.3rem;
+  }
+
+  ul {
+    display: flex;
+    flex-flow: column;
+
+    li {
+      color: #9ba9bb;
+
+      a {
+        display: flex;
+        gap: 1rem;
+        padding: 1rem 1.5rem;
+
+        svg {
+          width: 16px;
+          fill: #9ba9bb;
+        }
+      }
+
+      &:hover {
+        background: -webkit-linear-gradient(rgb(33, 147, 176), rgb(109, 213, 237));
+        color: #fff;
+
+        svg {
+          fill: #fff;
+        }
+      }
+    }
+  }
+}

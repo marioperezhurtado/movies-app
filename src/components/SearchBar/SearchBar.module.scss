@@ -1,0 +1,32 @@
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  max-width: 20rem;
+
+  label {
+    margin-bottom: 0.3rem;
+  }
+
+  div {
+    display: flex;
+    background-color: #fff;
+
+    input {
+      width: 100%;
+      padding: 0.5rem 0.7rem 0.4rem;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    svg {
+      width: 16px;
+      height: auto;
+      padding: 0.5rem 0.7rem 0.4rem;
+      border: 1px solid #ccc;
+      border-left: none;
+      fill: #5a5a5a;
+      cursor: pointer;
+    }
+  }
+
+}
