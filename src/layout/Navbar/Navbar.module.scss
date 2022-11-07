@@ -2,11 +2,11 @@
   height: 100vh;
   min-width: fit-content;
   background-color: #292e34;
+  color: #9ba9bb;
   text-align: center;
 
   h1 {
     margin: 2rem 0 5rem;
-    color: #fff;
     font-size: 1.3rem;
   }
 
@@ -15,7 +15,6 @@
     flex-flow: column;
 
     li {
-      color: #9ba9bb;
 
       a {
         display: flex;
