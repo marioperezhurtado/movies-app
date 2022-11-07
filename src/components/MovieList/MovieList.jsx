@@ -1,13 +1,14 @@
 import styles from './MovieList.module.scss'
 
 import MovieItem from '../MovieItem/MovieItem'
+import LoadSpinner from '../LoadSpinner/LoadSpinner'
 
 const MovieList = ({ onGetMovies }) => {
   const [movies, loading] = onGetMovies()
 
   console.log(movies)
 
-  if (loading) return <p>Loading</p>
+  if (loading) return <LoadSpinner></LoadSpinner>
 
   if (!movies || !movies.length) return <p>No movies found</p>
 

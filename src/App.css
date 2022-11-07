@@ -4,7 +4,7 @@
 }
 
 .content {
-  margin: 4rem 10%;
+  margin: 4rem 10% 4rem calc(10rem + 10%);
   flex-grow: 1;
 }
 
@@ -14,4 +14,10 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
 }

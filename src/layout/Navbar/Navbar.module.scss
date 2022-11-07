@@ -1,9 +1,11 @@
 .navbar {
-  min-width: fit-content;
+  position: fixed;
+  width: 10rem;
   min-height: 100vh;
   background-color: #292e34;
   color: #9ba9bb;
   text-align: center;
+  z-index: 1;
 
   h1 {
     margin: 2rem 0 5rem;

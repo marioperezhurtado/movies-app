@@ -9,6 +9,7 @@ import Categories from './pages/Categories/Categories'
 import Trending from './pages/Trending/Trending'
 import TopRated from './pages/TopRated/TopRated'
 import New from './pages/New/New'
+import Search from './pages/Search/Search'
 import PageNotFound from './pages/PageNotFound/PageNotFound'
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/trending" element={<Trending></Trending>} />
           <Route path="/top-rated" element={<TopRated></TopRated>} />
           <Route path="/new" element={<New></New>} />
+          <Route path="/search/:search" element={<Search></Search>} />
           <Route path="/*" element={<PageNotFound></PageNotFound>} />
         </Routes>
       </div>

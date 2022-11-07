@@ -25,15 +25,20 @@
       }
     }
 
-    svg {
-      width: 34px;
-      height: auto;
-      padding: 0 0.5rem;
-      border-left: 1px solid #e0e0e0;
-      fill: #fff;
+    a {
+      display: flex;
+      align-items: center;
       background: -webkit-linear-gradient(rgb(33, 147, 176), rgb(109, 213, 237));
-      cursor: pointer;
+
+      svg {
+        width: 34px;
+        height: auto;
+        padding: 0 0.5rem;
+        fill: #fff;
+        cursor: pointer;
+      }
     }
+
   }
 
 }
