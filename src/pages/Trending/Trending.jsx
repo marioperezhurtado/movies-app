@@ -1,10 +1,14 @@
-import TrendingList from '../../components/TrendingList/TrendingList'
+import useMovies from '../../hooks/useMovies'
+
+import MovieList from '../../components/MovieList/MovieList'
 
 const Trending = () => {
+  const useMoviesHandler = () => useMovies('trending')
+
   return (
     <>
       <h2 className="title">Trending Movies</h2>
-      <TrendingList></TrendingList>
+      <MovieList onGetMovies={useMoviesHandler}></MovieList>
     </>
   )
 }

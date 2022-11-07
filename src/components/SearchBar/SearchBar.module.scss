@@ -26,13 +26,12 @@
     }
 
     svg {
-      width: 16px;
+      width: 34px;
       height: auto;
-      padding: 0.5rem 0.7rem 0.4rem;
+      padding: 0 0.5rem;
       border-left: 1px solid #e0e0e0;
-      fill: #5a5a5a;
-      background: -webkit-linear-gradient(rgb(33, 147, 176), rgb(109, 213, 237));
       fill: #fff;
+      background: -webkit-linear-gradient(rgb(33, 147, 176), rgb(109, 213, 237));
       cursor: pointer;
     }
   }

@@ -1,6 +1,6 @@
 .navbar {
-  height: 100vh;
   min-width: fit-content;
+  min-height: 100vh;
   background-color: #292e34;
   color: #9ba9bb;
   text-align: center;
@@ -28,13 +28,13 @@
       }
 
       &:hover {
-        background: -webkit-linear-gradient(rgb(33, 147, 176), rgb(109, 213, 237));
         color: #fff;
 
         svg {
           fill: #fff;
         }
       }
+
     }
   }
 }

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 import styles from './NavBar.module.scss'
 
@@ -11,35 +11,33 @@ import TopRatedIcon from '../../assets/Icons/TopRatedIcon'
 const Navbar = () => {
   return (
     <nav className={styles['navbar']}>
-      <Link to="./">
-        <h1>Movies</h1>
-      </Link>
+      <h1>Movies</h1>
       <ul>
         <li>
-          <Link to="./">
+          <NavLink to="./">
             <HomeIcon></HomeIcon>Home
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="./categories">
+          <NavLink to="./categories">
             <CategoriesIcon></CategoriesIcon>Categories
-          </Link>
+          </NavLink>
         </li>
 
         <li>
-          <Link to="./trending">
+          <NavLink to="./trending">
             <TrendingIcon></TrendingIcon>Trending
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="./top-rated">
+          <NavLink to="./top-rated">
             <TopRatedIcon></TopRatedIcon>Top Rated
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="./new">
+          <NavLink to="./new">
             <NewIcon></NewIcon>New
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </nav>
