@@ -8,9 +8,7 @@ const Poster = ({ size, path }) => {
 
   const endLoadHandler = () => setLoading(false)
 
-  // const src = usePoster(size, path)
-
-  const src = 'https://via.placeholder.com/150'
+  const src = usePoster(size, path)
 
   return (
     <div className={styles['poster']}>

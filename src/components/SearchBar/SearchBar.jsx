@@ -1,31 +1,43 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 import styles from './SearchBar.module.scss'
 
 import SearchIcon from '../../assets/Icons/SearchIcon'
 
 const SearchBar = () => {
-  const [search, setSearch] = useState('')
+  const [searchInput, setSearchInput] = useState('')
 
-  const updateSearchHandler = (e) => setSearch(e.target.value)
+  const navigate = useNavigate()
+
+  const updateSearchHandler = (e) => {
+    const input = e.target.value
+    setSearchInput(input.charAt(0).toUpperCase() + input.slice(1))
+  }
+
+  const searchHandler = (e) => {
+    e.preventDefault()
+    if (!searchInput) return
+    navigate(`/search/${searchInput}`)
+    setSearchInput('')
+  }
 
   return (
     <div className={styles['search-bar']}>
       <label htmlFor="search">Search movie</label>
-      <div>
+      <form onSubmit={searchHandler}>
         <input
           type="text"
           placeholder="Interstellar"
           id="search"
           name="search"
-          value={search}
+          value={searchInput}
           onChange={updateSearchHandler}
         ></input>
-        <Link to={`./search/${search}`}>
+        <button>
           <SearchIcon></SearchIcon>
-        </Link>
-      </div>
+        </button>
+      </form>
     </div>
   )
 }

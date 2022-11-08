@@ -8,7 +8,7 @@
     font-weight: bold;
   }
 
-  div {
+  form {
     display: flex;
     background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
@@ -25,10 +25,11 @@
       }
     }
 
-    a {
+    button {
       display: flex;
       align-items: center;
       background: -webkit-linear-gradient(rgb(33, 147, 176), rgb(109, 213, 237));
+      border: none;
 
       svg {
         width: 34px;

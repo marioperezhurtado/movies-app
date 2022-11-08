@@ -6,8 +6,6 @@ import LoadSpinner from '../LoadSpinner/LoadSpinner'
 const MovieList = ({ onGetMovies }) => {
   const [movies, loading] = onGetMovies()
 
-  console.log(movies)
-
   if (loading) return <LoadSpinner></LoadSpinner>
 
   if (!movies || !movies.length) return <p>No movies found</p>

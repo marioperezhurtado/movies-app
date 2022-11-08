@@ -10,7 +10,9 @@ const Search = () => {
 
   return (
     <>
-      <h2 className="title">Results for "{search}" :</h2>
+      <h2 className="title">
+        Results for <span className="text-highlighted">"{search}"</span>:
+      </h2>
       <MovieList onGetMovies={searchMoviesHandler}></MovieList>
     </>
   )
