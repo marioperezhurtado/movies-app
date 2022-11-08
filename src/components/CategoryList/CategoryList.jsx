@@ -6,8 +6,6 @@ import LoadSpinner from '../LoadSpinner/LoadSpinner'
 const CategoryList = ({ onGetCategories }) => {
   const [categories, loading] = onGetCategories()
 
-  console.log(categories)
-
   if (loading) return <LoadSpinner></LoadSpinner>
 
   if (!categories || !categories.length) return <p>No categories found</p>

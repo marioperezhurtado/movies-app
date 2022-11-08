@@ -10,11 +10,14 @@ const MovieList = ({ onGetMovies }) => {
 
   if (!movies || !movies.length) return <p>No movies found</p>
 
-  const movieItems = movies.map((m) => (
-    <li key={m.id}>
-      <MovieItem movie={m}></MovieItem>
-    </li>
-  ))
+  const movieItems = movies.map((m) => {
+    if (m.vote_average == 0) return
+    return (
+      <li key={m.id}>
+        <MovieItem movie={m}></MovieItem>
+      </li>
+    )
+  })
 
   return <ul className={styles['movie-list']}>{movieItems}</ul>
 }
