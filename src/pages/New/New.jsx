@@ -3,7 +3,7 @@ import useMovies from '../../hooks/useMovies'
 import MovieList from '../../components/MovieList/MovieList'
 
 const New = () => {
-  const getNewMoviesHandler = () => useMovies('latest')
+  const getNewMoviesHandler = () => useMovies({ type: 'latest' })
 
   return (
     <>

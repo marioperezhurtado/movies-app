@@ -11,7 +11,7 @@ const PageNotFound = () => {
           can't be found <span>😢</span>
         </h2>
       </div>
-      <Link to="./" className="btn">
+      <Link to="/" className="btn">
         Back to Home
       </Link>
     </div>

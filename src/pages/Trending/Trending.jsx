@@ -3,7 +3,7 @@ import useMovies from '../../hooks/useMovies'
 import MovieList from '../../components/MovieList/MovieList'
 
 const Trending = () => {
-  const getTrendingMoviesHandler = () => useMovies('trending')
+  const getTrendingMoviesHandler = () => useMovies({ type: 'trending' })
 
   return (
     <>

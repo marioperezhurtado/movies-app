@@ -3,7 +3,7 @@ import useMovies from '../../hooks/useMovies'
 import MovieList from '../../components/MovieList/MovieList'
 
 const TopRated = () => {
-  const getTopRatedMoviesHandler = () => useMovies('topRated')
+  const getTopRatedMoviesHandler = () => useMovies({ type: 'topRated' })
 
   return (
     <>

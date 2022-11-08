@@ -10,6 +10,7 @@ import Trending from './pages/Trending/Trending'
 import TopRated from './pages/TopRated/TopRated'
 import New from './pages/New/New'
 import Search from './pages/Search/Search'
+import MovieDetails from './pages/MovieDetails/MovieDetails'
 import PageNotFound from './pages/PageNotFound/PageNotFound'
 
 function App() {
@@ -24,6 +25,10 @@ function App() {
           <Route path="/top-rated" element={<TopRated></TopRated>} />
           <Route path="/new" element={<New></New>} />
           <Route path="/search/:search" element={<Search></Search>} />
+          <Route
+            path="/movie/:movieId"
+            element={<MovieDetails></MovieDetails>}
+          />
           <Route path="/*" element={<PageNotFound></PageNotFound>} />
         </Routes>
       </div>

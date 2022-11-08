@@ -6,7 +6,8 @@ import MovieList from '../../components/MovieList/MovieList'
 const Search = () => {
   const { search } = useParams()
 
-  const searchMoviesHandler = () => useMovies('search', search)
+  const searchMoviesHandler = () =>
+    useMovies({ type: 'search', search: search })
 
   return (
     <>

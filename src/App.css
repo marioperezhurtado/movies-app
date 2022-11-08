@@ -31,6 +31,9 @@
 }
 
 .btn {
+  display: block;
+  width: fit-content;
+  margin-top: 1rem;
   padding: 0.5rem 0.7rem;
   border: 3px solid #737477;
   font-size: 0.9rem;
