@@ -1,12 +1,17 @@
 .page-not-found {
 
-  h2 {
-    font-size: 2.5rem;
+  .title {
+    margin-bottom: 2rem;
 
-    span {
-      background: none;
-      -webkit-text-fill-color: #000;
-      background-clip: border-box;
+    h2 {
+      font-size: 2.5rem;
+
+      span {
+        background: none;
+        -webkit-text-fill-color: #000;
+        background-clip: border-box;
+      }
     }
   }
+
 }

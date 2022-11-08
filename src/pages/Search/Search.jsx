@@ -1,12 +1,12 @@
 import { useParams } from 'react-router-dom'
-import useSearch from '../../hooks/useSearch'
+import useMovies from '../../hooks/useMovies'
 
 import MovieList from '../../components/MovieList/MovieList'
 
 const Search = () => {
   const { search } = useParams()
 
-  const searchMoviesHandler = () => useSearch(search)
+  const searchMoviesHandler = () => useMovies('search', search)
 
   return (
     <>

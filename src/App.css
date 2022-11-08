@@ -16,6 +16,33 @@
   background-clip: text;
 }
 
+.title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.active {
+  background: -webkit-linear-gradient(rgb(33, 147, 176), rgb(109, 213, 237));
+  color: #fff;
+}
+
+.active svg {
+  fill: #fff !important;
+}
+
+.btn {
+  padding: 0.5rem 0.7rem;
+  border: 3px solid #737477;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #737477;
+}
+
+.btn:hover {
+  border-color: #57585b;
+  color: #57585b;
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;

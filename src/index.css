@@ -18,17 +18,3 @@ body {
   background-color: #f5f5f5;
   color: #737477;
 }
-
-.title {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-.active {
-  background: -webkit-linear-gradient(rgb(33, 147, 176), rgb(109, 213, 237));
-  color: #fff;
-}
-
-.active svg {
-  fill: #fff !important;
-}
