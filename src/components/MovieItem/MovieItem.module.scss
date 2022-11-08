@@ -3,4 +3,18 @@
   padding: 1rem 1.5rem;
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+  .movie-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 1rem;
+
+    h3 {
+      font-size: 1.3rem;
+    }
+  }
+
+
+
 }

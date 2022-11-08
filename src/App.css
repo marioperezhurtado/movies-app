@@ -43,6 +43,10 @@
   color: #57585b;
 }
 
+.hidden {
+  display: none;
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;
