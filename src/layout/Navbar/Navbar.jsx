@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 
-import styles from './NavBar.module.scss'
+import styles from './Navbar.module.scss'
 
 import HomeIcon from '../../assets/Icons/HomeIcon'
 import CategoriesIcon from '../../assets/Icons/CategoriesIcon'
