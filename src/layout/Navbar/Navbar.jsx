@@ -15,28 +15,33 @@ const Navbar = () => {
       <ul>
         <li>
           <NavLink to="./">
-            <HomeIcon></HomeIcon>Home
+            <HomeIcon></HomeIcon>
+            <span>Home</span>
           </NavLink>
         </li>
         <li>
           <NavLink to="./categories">
-            <CategoriesIcon></CategoriesIcon>Categories
+            <CategoriesIcon></CategoriesIcon>
+            <span>Categories</span>
           </NavLink>
         </li>
 
         <li>
           <NavLink to="./trending">
-            <TrendingIcon></TrendingIcon>Trending
+            <TrendingIcon></TrendingIcon>
+            <span>Trending</span>
           </NavLink>
         </li>
         <li>
           <NavLink to="./top-rated">
-            <TopRatedIcon></TopRatedIcon>Top Rated
+            <TopRatedIcon></TopRatedIcon>
+            <span>Top Rated</span>
           </NavLink>
         </li>
         <li>
           <NavLink to="./new">
-            <NewIcon></NewIcon>New
+            <NewIcon></NewIcon>
+            <span>New</span>
           </NavLink>
         </li>
       </ul>

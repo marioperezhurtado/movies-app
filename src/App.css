@@ -21,6 +21,17 @@
   margin-bottom: 2rem;
 }
 
+.big-title {
+  font-size: 30px;
+  margin-bottom: 2rem;
+}
+
+.big-title span {
+  background: none;
+  -webkit-text-fill-color: #000;
+  background-clip: border-box;
+}
+
 .active {
   background: -webkit-linear-gradient(rgb(33, 147, 176), rgb(109, 213, 237));
   color: #fff;
@@ -53,5 +64,24 @@
 @keyframes fade-in {
   from {
     opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .app {
+    display: block;
+  }
+
+  .content {
+    margin: 2rem 5% 4rem;
+  }
+
+  .title {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .big-title {
+    font-size: 20px;
   }
 }

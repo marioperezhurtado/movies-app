@@ -2,11 +2,6 @@
   max-width: 40rem;
   margin: 0 auto;
 
-  h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-  }
-
   .card {
     display: flex;
     padding: 1rem 1.5rem;
@@ -33,7 +28,6 @@
         margin-bottom: 1rem;
 
         h2 {
-          margin-bottom: 0;
           font-size: 2rem;
         }
 
@@ -55,6 +49,8 @@
 
         ul {
           display: flex;
+          flex-flow: row wrap;
+          line-height: 1.5rem;
           gap: 4%;
           font-weight: bold;
         }
@@ -84,5 +80,76 @@
 
   &:global {
     animation: fade-in 250ms ease-out;
+  }
+}
+
+@media (max-width: 768px) {
+  .movie-details {
+    .card {
+      flex-direction: column;
+
+      .poster {
+        width: 100%;
+      }
+
+      .info {
+        width: 100%;
+        margin: 1rem 0 0 0;
+
+        .info-head {
+          gap: 0.5rem;
+
+          h2 {
+            font-size: 1.5rem;
+          }
+
+          div {
+            font-size: 1rem;
+            margin-top: 0.2rem;
+          }
+        }
+
+        .info-details {
+          display: flex;
+          flex-flow: column;
+          gap: 0.5rem;
+
+          .release-year {
+            font-size: 1.2rem;
+            font-weight: bold;
+          }
+
+          ul {
+            display: flex;
+            gap: 4%;
+            font-weight: bold;
+          }
+        }
+
+        .info-website {
+          margin-left: auto;
+        }
+
+      }
+    }
+
+    .overview {
+      margin-top: 2rem;
+      padding: 1rem 1.5rem;
+      background-color: #fff;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+      h3 {
+        margin-bottom: 0.8rem;
+      }
+
+      p {
+        line-height: 1.8rem;
+      }
+    }
+
+    &:global {
+      animation: fade-in 250ms ease-out;
+    }
   }
 }

@@ -14,7 +14,7 @@
 
   ul {
     display: flex;
-    flex-flow: column;
+    flex-direction: column;
 
     li {
 
@@ -36,7 +36,29 @@
           fill: #fff;
         }
       }
+    }
+  }
+}
 
+
+// Change to bottom horizontal navigation bar on mobile
+@media (max-width: 768px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    min-height: fit-content;
+
+    h1 {
+      display: none;
+    }
+
+    span {
+      display: none;
+    }
+
+    ul {
+      flex-direction: row;
+      justify-content: center;
     }
   }
 }
