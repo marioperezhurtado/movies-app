@@ -30,4 +30,4 @@ Launch a development server:
 
 Build for production:
 
-<pre><code>npm build</code></pre>
+<pre><code>npm run build</code></pre>
