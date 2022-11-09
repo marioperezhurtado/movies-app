@@ -61,16 +61,17 @@ const MovieDetails = () => {
             <p>{producer}</p>
             <p>{vote_count} votes</p>
           </div>
-
           <div className={styles['info-website']}>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href={homepage}
-              className="btn"
-            >
-              Official Site
-            </a>
+            {homepage && (
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={homepage}
+                className="btn"
+              >
+                Official Site
+              </a>
+            )}
           </div>
         </div>
       </div>

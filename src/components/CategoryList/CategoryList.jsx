@@ -1,10 +1,12 @@
+import { Link } from 'react-router-dom'
+import useCategories from '../../hooks/useCategories'
+
 import styles from './CategoryList.module.scss'
 
-import CategoryItem from '../CategoryItem/CategoryItem'
 import LoadSpinner from '../LoadSpinner/LoadSpinner'
 
-const CategoryList = ({ onGetCategories }) => {
-  const [categories, loading] = onGetCategories()
+const CategoryList = () => {
+  const [categories, loading] = useCategories()
 
   if (loading) return <LoadSpinner></LoadSpinner>
 
@@ -12,7 +14,11 @@ const CategoryList = ({ onGetCategories }) => {
 
   const categoryItems = categories.map((c) => (
     <li key={c.id}>
-      <CategoryItem category={c}></CategoryItem>
+      <Link to={`/categories/${c.id}`}>
+        <div className={styles['category-item']}>
+          <h3>{c.name}</h3>
+        </div>
+      </Link>
     </li>
   ))
 

@@ -11,6 +11,7 @@ import TopRated from './pages/TopRated/TopRated'
 import New from './pages/New/New'
 import Search from './pages/Search/Search'
 import MovieDetails from './pages/MovieDetails/MovieDetails'
+import Category from './pages/Category/Category'
 import PageNotFound from './pages/PageNotFound/PageNotFound'
 
 function App() {
@@ -28,6 +29,10 @@ function App() {
           <Route
             path="/movie/:movieId"
             element={<MovieDetails></MovieDetails>}
+          />
+          <Route
+            path="/categories/:categoryId"
+            element={<Category></Category>}
           />
           <Route path="/*" element={<PageNotFound></PageNotFound>} />
         </Routes>
