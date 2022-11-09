@@ -8,7 +8,7 @@ const Rating = ({ rating }) => {
     if (rating < 4) return '#bc3901' // red
     if (rating < 6) return '#b56e10' // orange
     if (rating < 7) return '#a49902' // yellow
-    if (rating < 8) return '#0b941b' // green
+    if (rating < 8) return '#096d15' // green
     if (rating < 9) return '#025ba4' // blue
     return '#520b94' // purple
   }

@@ -14,32 +14,32 @@ const Navbar = () => {
       <h1>Movies</h1>
       <ul>
         <li>
-          <NavLink to="./">
+          <NavLink to="./" aria-label="home">
             <HomeIcon></HomeIcon>
             <span>Home</span>
           </NavLink>
         </li>
         <li>
-          <NavLink to="./categories">
+          <NavLink to="./categories" aria-label="categories">
             <CategoriesIcon></CategoriesIcon>
             <span>Categories</span>
           </NavLink>
         </li>
 
         <li>
-          <NavLink to="./trending">
+          <NavLink to="./trending" aria-label="trending">
             <TrendingIcon></TrendingIcon>
             <span>Trending</span>
           </NavLink>
         </li>
         <li>
-          <NavLink to="./top-rated">
+          <NavLink to="./top-rated" aria-label="top rated">
             <TopRatedIcon></TopRatedIcon>
             <span>Top Rated</span>
           </NavLink>
         </li>
         <li>
-          <NavLink to="./new">
+          <NavLink to="./new" aria-label="new">
             <NewIcon></NewIcon>
             <span>New</span>
           </NavLink>

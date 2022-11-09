@@ -40,7 +40,7 @@ const MovieDetails = () => {
   const posterUrl = usePoster(poster_path)
   const releaseYear = release_date.slice(0, 4)
   const categoryItems = genres.map((g) => <li key={g.id}>{g.name}</li>)
-  const producer = production_companies[0].name
+  const producer = production_companies[0] ? production_companies[0].name : ''
 
   return (
     <div className={styles['movie-details']}>
@@ -52,7 +52,7 @@ const MovieDetails = () => {
         </div>
         <div className={styles['info']}>
           <div className={styles['info-head']}>
-            <h2>{title}</h2>
+            <h2 className="text-highlighted">{title}</h2>
             <Rating rating={vote_average}></Rating>
           </div>
           <div className={styles['info-details']}>
@@ -76,7 +76,7 @@ const MovieDetails = () => {
         </div>
       </div>
       <div className={styles['overview']}>
-        <h3>Synapsis</h3>
+        <h3>Synopsis</h3>
         <p>{overview}</p>
       </div>
     </div>

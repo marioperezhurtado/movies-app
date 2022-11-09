@@ -34,7 +34,7 @@ const SearchBar = () => {
           value={searchInput}
           onChange={updateSearchHandler}
         ></input>
-        <button>
+        <button aria-label="search">
           <SearchIcon></SearchIcon>
         </button>
       </form>
