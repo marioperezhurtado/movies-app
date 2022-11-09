@@ -1,5 +1,5 @@
 .movie-details {
-  max-width: 60rem;
+  max-width: 40rem;
   margin: 0 auto;
 
   h2 {
@@ -18,12 +18,52 @@
     }
 
     .info {
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-left: 5%;
+      width: 60%;
 
-      margin-left: 2rem;
+      .info-head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 1rem;
 
-      p {
-        line-height: 1.8rem;
+        h2 {
+          margin-bottom: 0;
+          font-size: 2rem;
+        }
+
+        div {
+          font-size: 1.5rem;
+          margin-top: 0.3rem;
+        }
       }
+
+      .info-details {
+        display: flex;
+        flex-flow: column;
+        gap: 0.5rem;
+
+        .release-year {
+          font-size: 1.2rem;
+          font-weight: bold;
+        }
+
+        ul {
+          display: flex;
+          gap: 4%;
+          font-weight: bold;
+        }
+      }
+
+      .info-website {
+        margin-left: auto;
+      }
+
     }
   }
 
@@ -35,6 +75,10 @@
 
     h3 {
       margin-bottom: 0.8rem;
+    }
+
+    p {
+      line-height: 1.8rem;
     }
   }
 

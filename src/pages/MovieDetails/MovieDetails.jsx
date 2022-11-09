@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom'
 import useMovies from '../../hooks/useMovies'
+import usePoster from '../../hooks/usePoster'
 
 import styles from './MovieDetails.module.scss'
 
@@ -12,11 +13,19 @@ const MovieDetails = () => {
 
   const [movieData, loading] = useMovies({ type: 'id', id: movieId })
 
-  const { title, poster_path, vote_average, overview } = movieData
-
-  console.log(movieData)
-
   if (loading) return <LoadSpinner></LoadSpinner>
+
+  const {
+    title,
+    poster_path,
+    vote_average,
+    overview,
+    homepage,
+    release_date,
+    genres,
+    vote_count,
+    production_companies,
+  } = movieData
 
   if (!title)
     return (
@@ -28,15 +37,41 @@ const MovieDetails = () => {
       </>
     )
 
+  const posterUrl = usePoster(poster_path)
+  const releaseYear = release_date.slice(0, 4)
+  const categoryItems = genres.map((g) => <li key={g.id}>{g.name}</li>)
+  const producer = production_companies[0].name
+
   return (
     <div className={styles['movie-details']}>
-      <h2>{title}</h2>
       <div className={styles['card']}>
         <div className={styles['poster']}>
-          <Poster size="overview" path={poster_path}></Poster>
+          <a target="_blank" rel="noopener noreferrer" href={posterUrl}>
+            <Poster path={poster_path}></Poster>
+          </a>
         </div>
         <div className={styles['info']}>
-          <Rating rating={vote_average}></Rating>
+          <div className={styles['info-head']}>
+            <h2>{title}</h2>
+            <Rating rating={vote_average}></Rating>
+          </div>
+          <div className={styles['info-details']}>
+            <p className={styles['release-year']}>{releaseYear}</p>
+            <ul>{categoryItems}</ul>
+            <p>{producer}</p>
+            <p>{vote_count} votes</p>
+          </div>
+
+          <div className={styles['info-website']}>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href={homepage}
+              className="btn"
+            >
+              Official Site
+            </a>
+          </div>
         </div>
       </div>
       <div className={styles['overview']}>
