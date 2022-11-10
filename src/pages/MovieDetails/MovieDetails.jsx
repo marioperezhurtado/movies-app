@@ -24,7 +24,7 @@ const MovieDetails = () => {
     release_date,
     genres,
     vote_count,
-    production_companies,
+    production_companies
   } = movieData
 
   if (!title)
@@ -39,8 +39,12 @@ const MovieDetails = () => {
 
   const posterUrl = usePoster(poster_path)
   const releaseYear = release_date.slice(0, 4)
-  const categoryItems = genres.map((g) => <li key={g.id}>{g.name}</li>)
   const producer = production_companies[0] ? production_companies[0].name : ''
+  const categoryItems = genres.map((g) => (
+    <li key={g.id}>
+      <Link to={`/categories/${g.id}`}>{g.name}</Link>
+    </li>
+  ))
 
   return (
     <div className={styles['movie-details']}>
@@ -67,8 +71,7 @@ const MovieDetails = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 href={homepage}
-                className="btn"
-              >
+                className="btn">
                 Official Site
               </a>
             )}

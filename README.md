@@ -2,9 +2,9 @@
 
 Movie Search App using React
 
-Bundler - Vite ⚡
-Styles - Scss Modules 💅🏻
-Routing - React Router v6 ⚛️
+Bundler - Vite ⚡<br />
+Styles - Scss Modules 💅🏻<br />
+Routing - React Router v6 ⚛️<br />
 
 Movies API : 📽️ https://developers.themoviedb.org/3/getting-started/introduction
 
