@@ -38,7 +38,7 @@ const MovieDetails = () => {
       </>
     )
 
-  const posterUrl = usePoster(poster_path)
+  const posterUrl = usePoster({ size: 'original', path: poster_path })
   const releaseYear = release_date.slice(0, 4)
   const producer = production_companies[0] ? production_companies[0].name : ''
   const categoryItems = genres.map((g) => (
@@ -83,10 +83,13 @@ const MovieDetails = () => {
           </div>
         </div>
       </div>
-      <div className={styles['overview']}>
-        <h3>Synopsis</h3>
-        <p>{overview}</p>
-      </div>
+      {overview && (
+        <div className={styles['overview']}>
+          <h3>Synopsis</h3>
+          <p>{overview}</p>
+        </div>
+      )}
+
       <CastList movieId={movieId}></CastList>
     </div>
   )

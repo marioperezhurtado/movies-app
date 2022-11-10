@@ -1,6 +1,7 @@
 const API_KEY = '8243a850b508a5696318cfcbb7ff2e8b'
 
 const POSTER_SIZE_TYPES = {
+  original: 'original',
   poster: 'w500',
   profile: 'w185',
 }
