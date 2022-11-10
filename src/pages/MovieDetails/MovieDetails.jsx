@@ -7,6 +7,7 @@ import styles from './MovieDetails.module.scss'
 import Poster from '../../components/Poster/Poster'
 import Rating from '../../components/Rating/Rating'
 import LoadSpinner from '../../components/LoadSpinner/LoadSpinner'
+import CastList from '../../components/CastList/CastList'
 
 const MovieDetails = () => {
   const { movieId } = useParams()
@@ -24,7 +25,7 @@ const MovieDetails = () => {
     release_date,
     genres,
     vote_count,
-    production_companies
+    production_companies,
   } = movieData
 
   if (!title)
@@ -51,27 +52,31 @@ const MovieDetails = () => {
       <div className={styles['card']}>
         <div className={styles['poster']}>
           <a target="_blank" rel="noopener noreferrer" href={posterUrl}>
-            <Poster path={poster_path}></Poster>
+            <Poster size="poster" path={poster_path}></Poster>
           </a>
         </div>
+
         <div className={styles['info']}>
           <div className={styles['info-head']}>
             <h2 className="text-highlighted">{title}</h2>
             <Rating rating={vote_average}></Rating>
           </div>
+
           <div className={styles['info-details']}>
             <p className={styles['release-year']}>{releaseYear}</p>
             <ul>{categoryItems}</ul>
             <p>{producer}</p>
             <p>{vote_count} votes</p>
           </div>
+
           <div className={styles['info-website']}>
             {homepage && (
               <a
                 target="_blank"
                 rel="noopener noreferrer"
                 href={homepage}
-                className="btn">
+                className="btn"
+              >
                 Official Site
               </a>
             )}
@@ -82,6 +87,7 @@ const MovieDetails = () => {
         <h3>Synopsis</h3>
         <p>{overview}</p>
       </div>
+      <CastList movieId={movieId}></CastList>
     </div>
   )
 }

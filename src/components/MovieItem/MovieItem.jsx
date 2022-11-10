@@ -14,7 +14,7 @@ const MovieItem = ({ movie }) => {
 
   return (
     <div className={styles['movie-item']} onClick={showDetailsHandler}>
-      <Poster size="overview" path={poster_path}></Poster>
+      <Poster size="poster" path={poster_path}></Poster>
       <div className={styles['movie-info']}>
         <h3>{title}</h3>
         <Rating rating={vote_average}></Rating>

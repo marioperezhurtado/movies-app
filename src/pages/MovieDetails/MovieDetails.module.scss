@@ -1,12 +1,30 @@
 .movie-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   max-width: 40rem;
   margin: 0 auto;
 
-  .card {
-    display: flex;
+  &:global {
+    animation: fade-in 250ms ease-out;
+  }
+
+  &>div {
     padding: 1rem 1.5rem;
     background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+    h3 {
+      margin-bottom: 0.8rem;
+    }
+
+    p {
+      line-height: 1.8rem;
+    }
+  }
+
+  .card {
+    display: flex;
 
     .poster {
       width: 40%;
@@ -63,24 +81,6 @@
     }
   }
 
-  .overview {
-    margin-top: 2rem;
-    padding: 1rem 1.5rem;
-    background-color: #fff;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-
-    h3 {
-      margin-bottom: 0.8rem;
-    }
-
-    p {
-      line-height: 1.8rem;
-    }
-  }
-
-  &:global {
-    animation: fade-in 250ms ease-out;
-  }
 }
 
 @media (max-width: 768px) {

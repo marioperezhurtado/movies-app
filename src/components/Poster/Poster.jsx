@@ -3,12 +3,12 @@ import usePoster from '../../hooks/usePoster'
 
 import styles from './Poster.module.scss'
 
-const Poster = ({ path }) => {
+const Poster = ({ size, path }) => {
   const [isLoading, setLoading] = useState(true)
 
   const endLoadHandler = () => setLoading(false)
 
-  const src = usePoster(path)
+  const src = usePoster({ size, path })
 
   return (
     <div className={styles['poster']}>
