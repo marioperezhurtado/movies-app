@@ -8,6 +8,7 @@ import Poster from '../../components/Poster/Poster'
 import Rating from '../../components/Rating/Rating'
 import LoadSpinner from '../../components/LoadSpinner/LoadSpinner'
 import CastList from '../../components/CastList/CastList'
+import ReviewList from '../../components/ReviewList/ReviewList'
 
 const MovieDetails = () => {
   const { movieId } = useParams()
@@ -25,7 +26,7 @@ const MovieDetails = () => {
     release_date,
     genres,
     vote_count,
-    production_companies,
+    production_companies
   } = movieData
 
   if (!title)
@@ -75,8 +76,7 @@ const MovieDetails = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 href={homepage}
-                className="btn"
-              >
+                className="btn">
                 Official Site
               </a>
             )}
@@ -89,8 +89,8 @@ const MovieDetails = () => {
           <p>{overview}</p>
         </div>
       )}
-
       <CastList movieId={movieId}></CastList>
+      <ReviewList movieId={movieId}></ReviewList>
     </div>
   )
 }
