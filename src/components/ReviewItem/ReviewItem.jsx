@@ -16,7 +16,6 @@ const ReviewItem = ({ review }) => {
       <div className={styles['review-head']}>
         <div className={styles['user-info']}>
           <div className={styles['poster']}>
-            <UserIcon></UserIcon>
             <Poster
               size={'avatar'}
               path={avatar_path}
