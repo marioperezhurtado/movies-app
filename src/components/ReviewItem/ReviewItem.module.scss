@@ -8,6 +8,18 @@
   .review-head {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
+    .user-info {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+
+      &>div {
+        height: 40px;
+        width: 40px;
+      }
+    }
   }
 
   p {

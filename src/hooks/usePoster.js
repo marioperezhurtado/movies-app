@@ -4,6 +4,7 @@ const POSTER_SIZE_TYPES = {
   original: 'original',
   poster: 'w500',
   profile: 'w185',
+  avatar: 'w45'
 }
 
 const usePoster = ({ size, path }) => {
