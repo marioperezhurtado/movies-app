@@ -2,6 +2,7 @@ import styles from './ReviewItem.module.scss'
 
 import Poster from '../Poster/Poster'
 import Rating from '../Rating/Rating'
+import UserIcon from '../../assets/Icons/UserIcon'
 
 const ReviewItem = ({ review }) => {
   const { author_details, content } = review
@@ -10,13 +11,17 @@ const ReviewItem = ({ review }) => {
 
   if (!rating || !username || !text) return
 
-  console.log(avatar_path)
-
   return (
     <div className={styles['review-item']}>
       <div className={styles['review-head']}>
         <div className={styles['user-info']}>
-          <Poster size={'avatar'} path={avatar_path}></Poster>
+          <div className={styles['poster']}>
+            <UserIcon></UserIcon>
+            <Poster
+              size={'avatar'}
+              path={avatar_path}
+              placeholder={<UserIcon></UserIcon>}></Poster>
+          </div>
           <strong>@{username}</strong>
         </div>
 
