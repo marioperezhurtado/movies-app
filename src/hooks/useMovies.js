@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import useLocale from './useLocale'
 
 const API_KEY = '8243a850b508a5696318cfcbb7ff2e8b'
 
@@ -12,10 +13,10 @@ const useMovies = ({ type, search, id, categoryId }) => {
     latest: `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}`,
     search: `https://api.themoviedb.org/3/search/movie?query=${search}&api_key=${API_KEY}`,
     id: `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`,
-    category: `https://api.themoviedb.org/3/discover/movie?with_genres=${categoryId}&sort_by=popularity.desc&api_key=${API_KEY}`,
+    category: `https://api.themoviedb.org/3/discover/movie?with_genres=${categoryId}&sort_by=popularity.desc&api_key=${API_KEY}`
   }
 
-  const url = MOVIE_QUERY_TYPES[type]
+  const url = useLocale(MOVIE_QUERY_TYPES[type])
 
   useEffect(() => {
     fetch(url)

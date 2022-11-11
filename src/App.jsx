@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
+import { UserContextProvider } from './contexts/UserContext'
 
 import './App.css'
 
@@ -16,28 +17,30 @@ import PageNotFound from './pages/PageNotFound/PageNotFound'
 
 function App() {
   return (
-    <div className="app">
-      <Navbar></Navbar>
-      <div className="content">
-        <Routes>
-          <Route path="/" element={<Home></Home>} />
-          <Route path="/categories" element={<Categories></Categories>} />
-          <Route path="/trending" element={<Trending></Trending>} />
-          <Route path="/top-rated" element={<TopRated></TopRated>} />
-          <Route path="/new" element={<New></New>} />
-          <Route path="/search/:search" element={<Search></Search>} />
-          <Route
-            path="/movie/:movieId"
-            element={<MovieDetails></MovieDetails>}
-          />
-          <Route
-            path="/categories/:categoryId"
-            element={<Category></Category>}
-          />
-          <Route path="/*" element={<PageNotFound></PageNotFound>} />
-        </Routes>
+    <UserContextProvider>
+      <div className="app">
+        <Navbar></Navbar>
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Home></Home>} />
+            <Route path="/categories" element={<Categories></Categories>} />
+            <Route path="/trending" element={<Trending></Trending>} />
+            <Route path="/top-rated" element={<TopRated></TopRated>} />
+            <Route path="/new" element={<New></New>} />
+            <Route path="/search/:search" element={<Search></Search>} />
+            <Route
+              path="/movie/:movieId"
+              element={<MovieDetails></MovieDetails>}
+            />
+            <Route
+              path="/categories/:categoryId"
+              element={<Category></Category>}
+            />
+            <Route path="/*" element={<PageNotFound></PageNotFound>} />
+          </Routes>
+        </div>
       </div>
-    </div>
+    </UserContextProvider>
   )
 }
 

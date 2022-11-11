@@ -6,10 +6,10 @@ const useCast = (movieId) => {
   const [cast, setCast] = useState([])
   const [isLoading, setLoading] = useState(true)
 
+  const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${API_KEY}`
+
   useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${API_KEY}`
-    )
+    fetch(url)
       .then((res) => res.json())
       .then((data) => {
         setCast(data.cast.slice(0, 10))
