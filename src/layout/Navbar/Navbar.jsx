@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom'
 
 import styles from './Navbar.module.scss'
 
+import LogoIcon from '../../assets/Icons/LogoIcon'
 import HomeIcon from '../../assets/Icons/HomeIcon'
 import CategoriesIcon from '../../assets/Icons/CategoriesIcon'
 import NewIcon from '../../assets/Icons/NewIcon'
@@ -11,7 +12,8 @@ import TopRatedIcon from '../../assets/Icons/TopRatedIcon'
 const Navbar = () => {
   return (
     <nav className={styles['navbar']}>
-      <h1>Movies</h1>
+      <LogoIcon />
+
       <ul>
         <li>
           <NavLink to="./" aria-label="home">

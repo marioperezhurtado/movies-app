@@ -7,6 +7,10 @@
   text-align: center;
   z-index: 1;
 
+  >svg {
+    width: 50px;
+  }
+
   h1 {
     margin: 2rem 0 5rem;
     font-size: 1.3rem;
@@ -47,7 +51,7 @@
     width: 100vw;
     min-height: fit-content;
 
-    h1 {
+    >svg {
       display: none;
     }
 
