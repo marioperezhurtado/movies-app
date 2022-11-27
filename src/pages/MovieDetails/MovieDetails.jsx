@@ -1,5 +1,6 @@
+import { useQuery } from '@tanstack/react-query'
 import { useParams, Link } from 'react-router-dom'
-import useMovies from '../../hooks/useMovies'
+import { useMovieById } from '../../hooks/useMovies'
 import usePoster from '../../hooks/usePoster'
 
 import styles from './MovieDetails.module.scss'
@@ -13,9 +14,18 @@ import ReviewList from '../../components/ReviewList/ReviewList'
 const MovieDetails = () => {
   const { movieId } = useParams()
 
-  const [movieData, loading] = useMovies({ type: 'id', id: movieId })
+  const {
+    isLoading,
+    error,
+    data: movieData
+  } = useQuery({
+    queryKey: ['movieDetails', movieId],
+    queryFn: () => useMovieById(movieId)
+  })
 
-  if (loading) return <LoadSpinner></LoadSpinner>
+  if (isLoading) return <LoadSpinner></LoadSpinner>
+
+  if (error) return
 
   const {
     title,

@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import { UserContextProvider } from './contexts/UserContext'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 import './App.css'
 
@@ -15,9 +15,11 @@ import MovieDetails from './pages/MovieDetails/MovieDetails'
 import Category from './pages/Category/Category'
 import PageNotFound from './pages/PageNotFound/PageNotFound'
 
+const queryClient = new QueryClient()
+
 function App() {
   return (
-    <UserContextProvider>
+    <QueryClientProvider client={queryClient}>
       <div className="app">
         <Navbar></Navbar>
         <div className="content">
@@ -40,7 +42,7 @@ function App() {
           </Routes>
         </div>
       </div>
-    </UserContextProvider>
+    </QueryClientProvider>
   )
 }
 

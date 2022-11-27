@@ -1,3 +1,4 @@
+import { useQuery } from '@tanstack/react-query'
 import { Link } from 'react-router-dom'
 import useCategories from '../../hooks/useCategories'
 
@@ -5,12 +6,19 @@ import styles from './CategoryList.module.scss'
 
 import LoadSpinner from '../LoadSpinner/LoadSpinner'
 
-const CategoryList = () => {
-  const [categories, loading] = useCategories()
+export default function CategoryList() {
+  const {
+    isLoading,
+    error,
+    data: categories
+  } = useQuery({
+    queryKey: ['categories'],
+    queryFn: useCategories
+  })
 
-  if (loading) return <LoadSpinner></LoadSpinner>
+  if (isLoading) return <LoadSpinner></LoadSpinner>
 
-  if (!categories || !categories.length) return <p>No categories found</p>
+  if (error) return <p>No categories found</p>
 
   const categoryItems = categories.map((c) => (
     <li key={c.id}>
@@ -24,5 +32,3 @@ const CategoryList = () => {
 
   return <ul className={styles['category-list']}>{categoryItems}</ul>
 }
-
-export default CategoryList

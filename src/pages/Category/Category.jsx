@@ -1,36 +1,45 @@
 import { useParams } from 'react-router-dom'
-import useMovies from '../../hooks/useMovies'
+import { useQuery } from '@tanstack/react-query'
+import { useMoviesByCategory } from '../../hooks/useMovies'
 import useCategories from '../../hooks/useCategories'
 
 import MovieList from '../../components/MovieList/MovieList'
 import LoadSpinner from '../../components/LoadSpinner/LoadSpinner'
 
-const Category = () => {
+export default function Category() {
   const { categoryId } = useParams()
 
-  const getMoviesByCategoryHandler = () =>
-    useMovies({ type: 'category', categoryId: categoryId })
+  const { isLoading: isMoviesLoading, data: movies } = useQuery({
+    queryKey: ['categoryMovies', categoryId],
+    queryFn: () => useMoviesByCategory(categoryId)
+  })
 
-  const [categories, loading] = useCategories()
+  const {
+    isLoading: isCategoriesLoading,
+    error: categoriesError,
+    data: categories
+  } = useQuery({
+    queryKey: ['categories'],
+    queryFn: useCategories
+  })
 
-  if (loading) return <LoadSpinner></LoadSpinner>
+  if (isMoviesLoading) return <LoadSpinner></LoadSpinner>
 
-  if (!categories || !categories.length)
-    return <MovieList onGetMovies={getMoviesByCategoryHandler}></MovieList>
+  if (isCategoriesLoading || categoriesError)
+    return (
+      <>
+        <MovieList movies={movies}></MovieList>
+      </>
+    )
 
-  const category = categories.find((c) => c.id === +categoryId)
-
-  if (!category || !category.name)
-    return <MovieList onGetMovies={getMoviesByCategoryHandler}></MovieList>
+  const categoryName = categories.find((c) => c.id === +categoryId)?.name
 
   return (
     <>
       <h2 className="title">
-        Category: <span className="text-highlighted">{category.name}</span>
+        Category: <span className="text-highlighted">{categoryName}</span>
       </h2>
-      <MovieList onGetMovies={getMoviesByCategoryHandler}></MovieList>
+      <MovieList movies={movies}></MovieList>
     </>
   )
 }
-
-export default Category
