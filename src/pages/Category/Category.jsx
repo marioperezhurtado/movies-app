@@ -1,17 +1,24 @@
-import { useParams } from 'react-router-dom'
+import { useParams, useSearchParams } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 import { useMoviesByCategory } from '../../hooks/useMovies'
 import useCategories from '../../hooks/useCategories'
 
 import MovieList from '../../components/MovieList/MovieList'
+import Pagination from '../../components/Pagination/Pagination'
+
 import LoadSpinner from '../../components/LoadSpinner/LoadSpinner'
 
 export default function Category() {
   const { categoryId } = useParams()
 
+  const [searchParams] = useSearchParams()
+  const page = searchParams.get('page')
+
+  const currentPage = +page || 1
+
   const { isLoading: isMoviesLoading, data: movies } = useQuery({
-    queryKey: ['categoryMovies', categoryId],
-    queryFn: () => useMoviesByCategory(categoryId)
+    queryKey: ['categoryMovies', categoryId, currentPage],
+    queryFn: () => useMoviesByCategory(categoryId, currentPage)
   })
 
   const {
@@ -28,7 +35,8 @@ export default function Category() {
   if (isCategoriesLoading || categoriesError)
     return (
       <>
-        <MovieList movies={movies}></MovieList>
+        <MovieList movies={movies.results}></MovieList>
+        <Pagination totalPages={movies.total_pages} />
       </>
     )
 
@@ -39,7 +47,8 @@ export default function Category() {
       <h2 className="title">
         Category: <span className="text-highlighted">{categoryName}</span>
       </h2>
-      <MovieList movies={movies}></MovieList>
+      <MovieList movies={movies.results}></MovieList>
+      <Pagination totalPages={movies.total_pages} />
     </>
   )
 }

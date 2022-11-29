@@ -1,14 +1,22 @@
+import { useSearchParams } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 import { useTopRatedMovies } from '../../hooks/useMovies'
 
 import MovieList from '../../components/MovieList/MovieList'
+import Pagination from '../../components/Pagination/Pagination'
 
 import LoadSpinner from '../../components/LoadSpinner/LoadSpinner'
 
 const TopRated = () => {
+  const [searchParams] = useSearchParams()
+  const page = searchParams.get('page')
+
+  const currentPage = +page || 1
+
   const { isLoading, data: movies } = useQuery({
-    queryKey: ['topRatedMovies'],
-    queryFn: useTopRatedMovies
+    queryKey: ['topRatedMovies', currentPage],
+    queryFn: () => useTopRatedMovies(currentPage),
+    keepPreviousData: true
   })
 
   if (isLoading) return <LoadSpinner></LoadSpinner>
@@ -16,7 +24,8 @@ const TopRated = () => {
   return (
     <>
       <h2 className="title">Top Rated Movies</h2>
-      <MovieList movies={movies}></MovieList>
+      <MovieList movies={movies.results}></MovieList>
+      <Pagination totalPages={movies.total_pages} />
     </>
   )
 }
