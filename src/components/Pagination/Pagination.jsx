@@ -27,11 +27,11 @@ export default function Pagination({ totalPages }) {
 
   return (
     <div className={styles.pagination}>
-      <a onClick={prevPageHandler}>{'\u2B9C'}</a>
+      <a onClick={prevPageHandler}>{'\u276E'}</a>
       <a onClick={firstPageHandler}>...</a>
       <a className={styles['page-selected']}>{currentPage}</a>
       <a onClick={lastPageHandler}>...</a>
-      <a onClick={nextPageHandler}>{'\u2B9E'}</a>
+      <a onClick={nextPageHandler}>{'\u276F'}</a>
     </div>
   )
 }
